@@ -1,0 +1,126 @@
+1) What is BIAS AND VARIANCE?/what is overfitting/underfitting?
+https://www.youtube.com/watch?v=EuBBz3bI-aA
+
+This difference between the actual values and predicted values is the error and it is used to evaluate the model. 
+
+Error = Variance + Bias + Noise
+While the noise is the irreducible error that we cannot eliminate, the other two i.e. Bias and Variance are reducible errors that we can attempt to minimize as much as possible.
+Say of example, in a simple height vs weight problem, when we try to fit a linear line and then sum of the square of the distance between the actual points and the line it is bias.
+Whereas when the same is done in a testing set the sum of squared distance is variance.
+A straight line will have high bias and low variance. A squiggly/curved line will have low bias and high variance. Thus a staright line can have good predictions but not great.
+Ideal Algorithm should have low bias and low variance.
+A high variance model is said to be over fitting and low variance one is underfitting.
+
+Overfitting – High variance and low bias
+To reduce overfitting increase training data , reduce model complexity
+
+Underfitting – Low variance and high bias
+To reduce Underfitting increase model complexity , incraese features , remove noise.
+
+2) What's the trade-off between bias and variance? 
+Given a plot between error and model complexity , we need to choose a ideal point where both bias and variance are minimal.
+
+3) What is LINEAR REGRESSION?
+https://www.youtube.com/watch?v=PaFPbb66DxQ
+
+When a we try to fit a linear in the relationship graph, we see that we need to minimize the error.
+y = m*x + c 
+m- the slope
+c -the y-intercept 
+
+Finding the best value for m and c is least sqaures.
+
+to know the least squares we plot the sum of squared residuals and take the derivative of the function. Because the derivative tells us the slope of the function and where the slope is zero we get our least sqaures.
+
+4) What is GRADIENT DESCENT? / what is the difference between stochastic GD and GD?
+
+Gradient descent is the best way to optimize a algorithm. For example , it will optimize the best straight line that would fit for an linear regression.
+Optimize a squiggle line for logistic regression.
+
+It helps in finding the coefficients of a function to minimize the loss function. Like in linear regression it will help in finding the value of intercept where there is minimal loss.
+
+Batch GD : Processes all training examples for each iteration. Shouldn't be used for large training samples.
+Stochastic GD: Processes 1 training sample for every iteration. Parameter gets updated after every iteration.
+Mini Batch: b- batches m- training examples . b<m examples are processed per iteration in batches of b. Works for large training samples.
+
+5) DIMENSIONALITY REDUCTION : 
+mygreatlearning.com/blog/understanding-curse-of-dimensionality/
+
+Whenever we train some high dimensional data we encounter some issues in training. 
+A) Data Sparsity - Ideal expectation for a model to predict the target accurately is that, it must have seen all the combination of feature variables.
+i.e. the test vlaue must belong to the same distribution as of train data. But this is hard to achieve in a high dimensional data.
+b) Distance concentration: The choice of distance metric choosen in a KNN/K-means in lower dimensions may not work well with higher dimensions, because in lower dimensions the spread is uniform whereas in higher dimensions spread of the frequency decreases.
+
+HANDLING DIM REDUCTION : They fall into two catregories :
+	1) FEATURE SELECTION :
+		a) Atrributes with low variance are eliminated as they mostky remain an constant and do not contribute to the predictabilty of the model.
+		b) When we perform Pairwise corelation of the attributes , one of the attributes in the pair which show high coorelation is eliminated. 
+		c) In algos like decision trees (CART based  models) , we can clearly get to know the feature importance. The ones which dont contribute much top the model can be eliminated.
+	2) FEATURE EXTRACTION:
+		a) PCA : A high dimensional coorelated data is transfomed into a lower dimensional uncorelated data , which are called the principal components.  
+		We calculate the percentage of variance for each component and the we select only the important components which majorly contribute the variance.
+		Which helps in capturing major percentage of variance in data.
+		b) FA : In factor analysis we represent attributes as weighted linear combination of factors.
+		
+
+6) HOW TO CHOOSE A MODEL?
+A) Size of Training Data : When we have low training dataset we need to choose an hig bias low variance based algo like Linear Reg, Naive Baiyes.
+If we have large training set then we can go low bias high variance algo like KNN, Decision trees.
+b) Accuracy : Test and Training Accuracy. In case if we need interpretablity , like explaining the decisions , wew might need to trade off accuracy.
+c) Training Time : Higher the training time higher the accuracy. Low time taking algo's Naive bayes, Linear and Logistic regression. High time taking : SVM, Random forest, NN.
+d) Linearity: If the data is linearly seperable then we can opt for methods like Linear Logistic and SVM. 
+e) No. of features : need to carefully choose the features . There are multiple methods for feature selection and feature extraction like PCA, FA etc.
+
+7)HOW TO EVALUATE A MODEL?
+First we need to plot our confusion matrix
+Accuracy = (TP+TN)/total
+Precision= TP/predicted yes
+Recall/TPR/Sensitivity = TP/actual yes
+F1 score is the harmonic mean of the precision and recall. It helps us mitigate the skewness in the data.
+Specificity/TNR = TN/actual NO
+ROC ( Receiver Operating Characteristic) Curve : We need to draw a plot between TPR and FPR(1-TNR)
+This helps us to visualize the tradeoff between TPR and FPR.
+We get the AUC , which is ratio of area under the curve and total area. Optimum AUC value 0.8-1
+Gini Coefficient : 2*AUC - 1
+RMSE , R Squared
+K-FOLD CROSS VALIDATION : When we are not sure about which part of the data should we take into test and which part into train, Cross validation helps us.
+It divides the data into k-folds and ensures all the data is covered in test and training segments after all runs.
+It helps us to choose the best algo and find the right tuning parameter.
+
+8)What is LDA? Difference between LDA and PCA
+LDA creates an new axis that maximizes the distance between the means for the two categories, while minimizing the scatter.(Scatter is ued to indicate the varaition)
+
+Both try to reduce the dimensionality but the difference between LDA and PCA is that PCA looks at the variables with most variation
+LDA tries to maximize the seperation of known categories.
+
+9)Bagging and Boosting
+Bagging technique is nothing but bootstrap aggregation. Boostraping is used in statistics , where when you want to calculate a mean /SD for an dataset of 100 instances. You sub sample them and then aggregate the means of the subsample.
+In Bagging we create 5 sub samples in a classification problem , and assume we have 5 bagged trees . If 4 of them predict its Blue then we go with blue.
+
+Random forest :
+In bagging the predictions from  sub trees can have high correlation. Random forest minimizes the correlation .
+Boosting:
+In sequential learning or boosting weak learners are created one after another and the data sample set are weighted in such a manner that during creation, the next learner focuses on the samples that were wrongly predicted by the previous classifier. So, at each step, the classifier improves and learns from its previous mistakes or misclassifications.
+ 
+10)Feature importance is decided by factors like Gini coefficients and entropy.
+
+11)GRID SEARCH : Grid search tries out all possible combinations of the hyperparametrs we gave to it using cross validation and gives back the best combination.
+
+12) Why scaling ?
+The presence of feature value X in the formula will affect the step size of the gradient descent. The difference in ranges of features will cause different step sizes for each feature. To ensure that the gradient descent moves smoothly towards the minima and that the steps for gradient descent are updated at the same rate for all the features, we scale the data before feeding it to the model.
+Having features on a similar scale can help the gradient descent converge more quickly towards the minima.
+
+13) Pipeline:
+Avoid data leakage.
+Consistency and reproducibility.
+
+14) Convolution
+convolution is a mathematical operation on two functions (f and g) that produces a third function ({\displaystyle f*g}f*g) that expresses how the shape of one is modified by the other. 
+
+
+
+
+
+
+
+
