@@ -1,0 +1,67 @@
+1) WHAT IS MULTICOLLINEARITY AND HOW TO CHECK FOR MULTICOLLINEARITY?
+Multicollinearity is the occurrence of high intercorrelations among two or more independent variables in a multiple regression model. Multicollinearity can lead to skewed or misleading results. Multicollinearity is the occurrence of high intercorrelations among two or more independent variables in a multiple regression model. Multicollinearity can lead to skewed or misleading results .
+It arises due to insufficient data, using incorrect dummy variables.
+You can detect it by calculating correlation coefficients for all pairs of predictor variables.
+3) WHAT IS  AUTOCORRELATION AND HOW DO YOU DEAL WITH AUTO CORRELATION?
+Autocorrelation is when future outcomes depend on previous outcomes. When there is autocorrelation, the errors show a sequential pattern and the model is less accurate. Example.  an error at one point in time travels to a subsequent point in time. For example, you might overestimate the value of your stock market investments for the first quarter, leading to an overestimate of values for following quarters.
+Detected with Correlogram/ACF plot(Morans's I value vs lags) . gives a summary of correlation at different periods of time . Higher the I value higher autocorrelation
+Treated by improving the model fitness by properly capturing the data structure in model . Also by including auto regressive model
+5) DIFFERENT TYPES OF DISTRIBUTIONS AND WHAT CAN THEY BE USED TO MODEL?
+Bernoulli,Uniform ,Binomial ,Normal,Poisson, Exponential
+https://www.analyticsvidhya.com/blog/2017/09/6-probability-distributions-data-science/
+6) STANDARD DEVIATION - a quantity expressing by how much the members of a group differ from the mean value for the group. root(summation(xi-mu)2/N)
+VARIANCE - The variance is the average of the squared differences from the mean. summation(xi-mu)2/N-1
+7) CENTRAL TENDENCY
+the statistical measure that identifies a single value as representative of an entire distribution. Measure for normal - mean. SKewed - median
+8) what is CENTRAL LIMIT THEOREM (TDS - Q5 and conditions - Q7)
+it states that the distribution of sample means approximates a normal distribution. You would take a sample from a data set and calculate the mean of that sample. Once repeated multiple times, you would plot all your means and their frequencies onto a graph and see that a bell curve, also known as a normal distribution, has been created. The mean of this distribution will closely resemble that of the original data.
+9) WHAT IS SKEWNESS and how to measure
+The measure of how asymmetric a distribution can be is called skewness.
+RIght Skew: Always: mean greater than the mode Always: median greater than the mode Most of the time: mean greater than median
+Left Skew: Always: mean less than the mode Always: median less than the mode Most of the time: mean less than median
+Measure by Pearson coefficent of skewness: (Mode-Mean/SD)
+10) Calculate MOD WITHOUT USING MODULUS (num - divisor * (num // divisor))
+11) what is CONFIDENCE INTERVAL
+A confidence interval displays the probability that a parameter will fall between a pair of values around the mean. Confidence intervals measure the degree of uncertainty or certainty in a sampling method. Ex: We select different samples randomly from the same population and compute the confidence interval for each sample to see how it may represent the true value of the population variable
+12) AIC(Akaike Information Criterion) Suppose you build several regression models fro various factors (education, income,health) to see how each contribute to the low economic status. AIC will be able to rank them from best to worst.
+13) P-VALUE and why is it significant (TDS - Q2)
+the p-value is the probability of obtaining results at least as extreme as the observed results of a statistical hypothesis test, assuming that the null hypothesis is correct. A smaller p-value means that there is stronger evidence in favor of the alternative hypothesis.
+14) EXPLAIN ABOUT ANNOVA
+Analysis of variance (ANOVA) is a statistical technique that is used to check if the means of two or more groups are significantly different from each other. ANOVA checks the impact of one or more factors by comparing the means of different samples.
+15) COSINE SIMILARITY formula and what distance does cosine uses
+Cosine similarity is the cosine of the angle between two n-dimensional vectors in an n-dimensional space
+The L1 NORM that is calculated as the sum of the absolute values of the vector. The L2 NORM that is calculated as the square root of the sum of the squared vector values
+16) NULL HYPOTHESIS AND ALTERNATE HYPOTHESIS
+The null hypothesis: It is a statement of no difference between sample means or proportions or no difference between a sample mean or proportion and a population mean or proportion. 
+Ha: The alternative hypothesis: It is a claim about the population that is contradictory to null hypothesis and what we conclude when we reject null hypothesis.
+Example A: Students in the school score an average of 7 out of 10 in exams. Example B: Mean annual return of the mutual fund is 8% per annum
+17) what is TYPE -1 AND TYPE-2 ERROR
+A type 1 error is when you incorrectly reject a true null hypothesis. It’s also called a false positive.
+A type 2 error is when you don’t reject a false null hypothesis. It’s also called a false negative.
+19) What is TIME SERIES DATA?
+Time series data: A set of observations on the values that a variable takes at different times.
+Cross-sectional data: Data of one or more variables, collected at the same point in time.
+Pooled data: A combination of time series data and cross-sectional data.
+3 CHARACTERISTICS: Stationarity,Trend,Seasonality
+4 COMPONENETS: Secular trend, which describe the movement along the term; Seasonal variations, which represent seasonal changes;
+Cyclical fluctuations, which correspond to periodical but not seasonal variations; Irregular variations, which are other nonrandom sources of variations of series.
+6) What are ASSUMPTIONS OF TIME SERIES MODELS?.
+Stationarity with a slowly varying mean: A stationary process has the property that the mean, variance and autocorrelation structure do not change over time. It means a flat looking series, without trend, constant variance over time, a constant autocorrelation structure over time and no periodic fluctuations.
+18) When should you use a T-TEST VS A Z-TEST? (TDS - Q1)
+
+What is the difference between a combination and a permutation? (TDS -Q9)
+
+How are confidence tests and hypothesis tests similar? How are they different? (TDS -Q12)
+
+Give some examples of some random sampling techniques
+Selection Bias - TDS (Q-20)
+Why mean imputation is bad practice? (Q-22) Spoils feature corelation Increase bias and decrease variance
+
+
+4) Discrete time vs continuous time markov chains?
+
+A Markov chain is a discrete-valued Markov process. Discrete-valued means that the state space of possible values of the Markov chain is finite or countable. A Markov process is basically a stochastic process in which the past history of the process is irrelevant if you know the current system state. In other words, all information about the past and present that would be useful in saying something about the future is contained in the present state.
+
+A discrete-time Markov chain is one in which the system evolves through discrete time steps. So changes to the system can only happen at one of those discrete time values. An example is a board game like Chutes and Ladders (apparently called "Snakes and Ladders" outside the U.S.) in which pieces move around on the board according to a die roll. If you are looking at the board at the beginning of someone's turn and wondering what the board will look like at the beginning of the next person's turn, it doesn't matter how the pieces arrived at their current positions (the past history of the system). All that matters is that the pieces are where they currently are (the current system state) and the upcoming die roll (the probabilistic aspect). This is discrete because changes to the system state can only happen on someone's turn.
+
+A continuous-time Markov chain is one in which changes to the system can happen at any time along a continuous interval. An example is the number of cars that have visited a drive-through at a local fast-food restaurant during the day. A car can arrive at any time t rather than at discrete time intervals. Since arrivals are basically independent, if you know the number of cars that have gone through by 10:00 a.m., what happened before 10:00 a.m. doesn't give you any additional information that would be useful in predicting the number of cars that will have visited the drive-through by, say, noon. (This is under the usual but reasonable assumption that the arrivals to the drive-through follow a Poisson process.)

@@ -1,0 +1,27 @@
+RANDOM FOREST - Its an ENSEMBLE METHOD whihc comibines deciions from multiple decision trees. USED MAINLY FOR HIGH DIMENSIONAL DATA - As it is faster to train beacuse we only train a subset of features. 
+
+Bagging technique is nothing but bootstrap aggregation. Boostraping is used in statistics , where when you want to calculate a mean /SD for an dataset of 100 instances. You sub sample them and then aggregate the means of the subsample.
+
+The (random forest) algorithm establishes the outcome based on the predictions of the decision trees. It predicts by taking the average or mean of the output from various trees. Increasing the number of trees increases the precision of the outcome.
+
+A decision tree consists of three components: decision nodes, leaf nodes, and a root node. 
+
+A decision tree algorithm divides a training dataset into branches, which further segregate into other branches. This sequence continues until a leaf node is attained. The leaf node cannot be segregated further.
+
+Entropy and information gain are the building blocks of decision trees. An overview of these fundamental concepts will improve our understanding of how decision trees are built.
+
+Entropy is a metric for calculating uncertainty. Information gain is a measure of how uncertainty in the target variable is reduced, given a set of independent variables.
+ 
+The information gain concept involves using independent variables (features) to gain information about a target variable (class). The entropy of the target variable (Y) and the conditional entropy of Y (given X) are used to estimate the information gain. In this case, the conditional entropy is subtracted from the entropy of Y.
+
+Information gain is used in the training of decision trees. It helps in reducing uncertainty in these trees. A high information gain means that a high degree of uncertainty (information entropy) has been removed. Entropy and information gain are important in splitting branches, which is an important activity in the construction of decision trees.
+
+Classification in random forests employs an ensemble methodology to attain the outcome. The training data is fed to train various decision trees. This dataset consists of observations and features that will be selected randomly during the splitting of nodes. output is determined by the mode of the decision trees’ class
+
+A random forest regression follows the concept of simple regression. Values of dependent (features) and independent variables are passed in the random forest model.In a random forest regression, each tree produces a specific prediction. The mean prediction of the individual trees is the output of the regression. 
+
+Hyper paramaters : max_depth,min_sample_split,max_leaf_nodes,min_samples_leaf,n_estimators,max_sample (bootstrap sample),max_features
+https://www.analyticsvidhya.com/blog/2020/03/beginners-guide-random-forest-hyperparameter-tuning/
+
+
+https://www.amazon.in/Lenskart-Antiglare-Computer-Eyeglasses-Rectangle/dp/B09D3GSNJ6/ref=sr_1_18?dchild=1&keywords=matte+spectacle+frames&qid=1630236988&refinements=p_n_feature_four_browse-bin%3A21635390031%2Cp_n_feature_fourteen_browse-bin%3A4296232031%2Cp_n_feature_sixteen_browse-bin%3A4296249031%2Cp_n_size_browse-vebin%3A1975394031%2Cp_n_size_two_browse-vebin%3A1975317031%7C1975322031&rnid=1974754031&s=apparel&sr=1-18

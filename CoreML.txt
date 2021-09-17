@@ -1,0 +1,81 @@
+1) ASSUMPTIONS IN LOGISTIC REGRESSION AND LINEAR REGRESSION
+LINEAR REG
+There is a linear relationship between the dependent variables and the regressors, meaning the model you are creating actually fits the data
+The errors or residuals of the data are normally distributed and independent from each other
+There is minimal multicollinearity between explanatory variables
+Homoscedasticity. This means the variance around the regression line is the same for all values of the predictor variable
+LOGISTIC REG
+logistic regression requires the observations to be independent of each other.
+logistic regression requires there to be little or no multicollinearity among the independent variables.
+logistic regression assumes linearity of independent variables and log odds.  
+binary logistic regression requires the dependent variable to be binary
+Finally, logistic regression typically requires a large sample size.  
+2) EXPLAIN BAYES THEOREM AND WHY IT IS CALLED "NAIVE" -  because it assumes that each input variable is independent
+Ex.occurance of each word is conditional independent of the other words given some class label. "Lottery" is independent of the occurence of "money"
+7) What are REGULARIZATION TECHNIQUES, why we use it. 
+technique which makes slight modifications to the learning algorithm such that the model generalizes better.
+regularization penalizes the coefficients. In deep learning, it actually penalizes the weight matrices of the nodes.
+Cost function = Loss (say, binary cross entropy) + Regularization term . L1,L2,Dropout 
+https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/
+8) What is GRADIENT DESCENT?
+Gradient descent is a first-order iterative optimization algorithm for finding a local minimum of a differentiable function. The idea is to take repeated steps in the opposite direction of the gradient of the function at the current point, because this is the direction of steepest descent .Gradient descent is the best way to optimize a algorithm. used for minimizing the cost function. For example , it will optimize the best straight line that would fit for an linear regression. Optimize a squiggle line for logistic regression. The cost fucntion returns the error between predicted outcomes compared with the actual outcomes.
+Batch GD : Processes all training examples for each iteration. Shouldn't be used for large training samples.
+Stochastic GD: Processes 1 training sample for every iteration. Parameter gets updated after every iteration.
+Mini Batch: b- batches m- training examples . b<m examples are processed per iteration in batches of b. Works for large training samples.
+https://www.analyticsvidhya.com/blog/2020/10/how-does-the-gradient-descent-algorithm-work-in-machine-learning/
+PCA : A high dimensional coorelated data is transfomed into a lower dimensional uncorelated data , which are called the principal components.  
+We calculate the percentage of variance for each component and the we select only the important components which majorly contribute the variance.
+Which helps in capturing major percentage of variance in data.
+https://www.sartorius.com/en/knowledge/science-snippets/what-is-principal-component-analysis-pca-and-how-it-is-used-507186
+9) WHY UNDERFITTING OR OVERFITTING OCCURS?
+High bias Underfir Low Bias Overfir
+Bias: Assumptions made by a model to make a function easier to learn. 
+Variance: If you train your data on training data and obtain a very low error, upon changing the data and then training the same previous model you experience a high error, this is variance. 
+To reduce overfitting increase training data , reduce model complexity.
+To reduce Underfitting increase model complexity , incraese features , remove noise.  
+Given a plot between error and model complexity , we need to choose a ideal point where both bias and variance are minimal.
+6) what are DIFFERENT COST FUNCTIONS / EVALUATION TECHNIQUES
+Loss function: Used when we refer to the error for a single training example.
+Cost function: Used to refer to an average of the loss functions over an entire training dataset
+Regression - mean error(mean of all errors), MSE/ L2( Here a square of the difference between the actual and predicted value is calculated to avoid any possibility of negative error),Mean absolute error/L1 Here an absolute difference between the actual and predicted value is calculated.
+R2 score is a metric that tells the performance of your model, not the loss in an absolute sense that how many wells did your model perform.
+(1-(squared sum error of regression line/squared sum error of mean line))
+Classification: -  Cross-entropy can be considered as a way to measure the distance between two probability distributions.
+probability distribution  for n classes p(Tomato) = [0.1, 0.3, 0.6] target probability distribution y(Tomato) = [0, 0, 1] Cross-Entropy(y,P) = – (0*Log(0.1) + 0*Log(0.3)+1*Log(0.6)) = 0.51
+The Receiver Operator Characteristic (ROC) curve is an evaluation metric for binary classification problems. It is a probability curve that plots the TPR against FPR at various threshold values and essentially separates the ‘signal’ from the ‘noise’. The Area Under the Curve (AUC) is the measure of the ability of a classifier to distinguish between classes and is used as a summary of the ROC curve.
+https://www.analyticsvidhya.com/blog/2020/06/auc-roc-curve-machine-learning/
+5) DIMENSIONALITY REDUCTION : 
+https://mygreatlearning.com/blog/understanding-curse-of-dimensionality/
+
+Whenever we train some high dimensional data we encounter some issues in training. 
+A) Data Sparsity - Ideal expectation for a model to predict the target accurately is that, it must have seen all the combination of feature variables.
+i.e. the test vlaue must belong to the same distribution as of train data. But this is hard to achieve in a high dimensional data.
+b) Distance concentration: The choice of distance metric choosen in a KNN/K-means in lower dimensions may not work well with higher dimensions, because in lower dimensions the spread is uniform whereas in higher dimensions spread of the frequency decreases.
+
+HANDLING DIM REDUCTION : They fall into two catregories :
+	1) FEATURE SELECTION :
+		a) Atrributes with low variance are eliminated as they mostky remain an constant and do not contribute to the predictabilty of the model.
+		b) When we perform Pairwise corelation of the attributes , one of the attributes in the pair which show high coorelation is eliminated. 
+		c) In algos like decision trees (CART based  models) , we can clearly get to know the feature importance. The ones which dont contribute much top the model can be eliminated.
+	2) FEATURE EXTRACTION:
+		a) PCA : A high dimensional coorelated data is transfomed into a lower dimensional uncorelated data , which are called the principal components.  
+		We calculate the percentage of variance for each component and the we select only the important components which majorly contribute the variance.
+		Which helps in capturing major percentage of variance in data.
+		b) FA : In factor analysis we represent attributes as weighted linear combination of factors.
+		
+
+6) HOW TO CHOOSE A MODEL?
+A) Size of Training Data : When we have low training dataset we need to choose an hig bias low variance based algo like Linear Reg, Naive Baiyes.
+If we have large training set then we can go low bias high variance algo like KNN, Decision trees.
+b) Accuracy : Test and Training Accuracy. In case if we need interpretablity , like explaining the decisions , wew might need to trade off accuracy.
+c) Training Time : Higher the training time higher the accuracy. Low time taking algo's Naive bayes, Linear and Logistic regression. High time taking : SVM, Random forest, NN.
+d) Linearity: If the data is linearly seperable then we can opt for methods like Linear Logistic and SVM. 
+e) No. of features : need to carefully choose the features . There are multiple methods for feature selection and feature extraction like PCA, FA etc.
+3) What is a LINEAR FUNCTION AND A NON LINEAR FUNCTION -  A linear function has a constant rate of change. A nonlinear function does no
+4) Difference between CROSS PRODUCT AND DOT PRODUCT. What is magnitude of a vector
+ the result of the dot product is a scalar quantity, result of the cross product is a vector quantity.magnitude of a vector is the length of the vector
+5) What do you infer from these graphs(2 graphs) 
+https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/
+https://developers.google.com/machine-learning/testing-debugging/metrics/interpretic
+11) ANAMOLY DETECTION
+https://www.anodot.com/blog/what-is-anomaly-detection/
